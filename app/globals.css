@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --polaris-blue: #00D0FF;
+  --nebula-violet: #4C00FF;
+  --dark-bg: #0A0A0F;
+  --dark-card: #1A1A2E;
+  --dark-border: #2A2A3E;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Satoshi', sans-serif;
+  background: var(--dark-bg);
+  color: white;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 50%, #2A2A3E 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--polaris-blue), var(--nebula-violet));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--polaris-blue);
+}
+
+/* Mesh gradient backgrounds */
+.mesh-gradient {
+  background: linear-gradient(135deg, #00D0FF 0%, #4C00FF 100%);
+}
+
+.dark-mesh {
+  background: linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 50%, #2A2A3E 100%);
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 208, 255, 0.3);
+}
+
+.glow-violet {
+  box-shadow: 0 0 20px rgba(76, 0, 255, 0.3);
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon text */
+.neon-text {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
